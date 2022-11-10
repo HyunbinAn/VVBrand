@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'Navigation Basics',
+    home: FirstRoute(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home:Scaffold(
-        appBar:AppBar(
-
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          'HANDA',
         ),
-        body: Center(
-          child: Container(
-            
-          ),
+        leading: const Icon(Icons.menu),
+        // actions: const Icon(Icons.person_outlined),
+      ),
+      body: SizedBox(
+        child: Container(
+          child: Text('Welcome to Handong'),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          height: 50,
         ),
       ),
     );
